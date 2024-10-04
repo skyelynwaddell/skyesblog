@@ -1,0 +1,35 @@
+{{ define "main" }}
+
+{{/*  Homepage & Post List  */}}
+<div class="list">
+    {{ range .Paginator.Pages }}
+
+    {{/*  Post image  */}}
+    <a href={{ .Permalink }}>
+        <img src={{ .Params.image }} alt={{ .Params.title }}>
+    </a>
+
+    {{/*  Post Title  */}}
+    <a href={{ .Permalink }}>
+        {{ .Params.title }}
+    </a>
+
+    {{/*  Post Date & Description  */}}
+    <time>{{ dateFormat .Site.Params.dateFormat .Date }}</time>
+    {{ .Params.description }}
+    <img src={{ .Site.Params.avatar }} alt={{ .Params.title }}>
+
+    {{/*  Post Authors  */}}
+    {{ range (.GetTerms "authors" )}}
+    <a href={{ .Permalink }}>{{ .Name }}</a>
+    {{ end }}
+
+    {{/*  Post Categories  */}}
+    {{ range (.GetTerms "categories" )}}
+    <a href={{ .Permalink }}>{{ .Name }}</a>
+    {{ end }}
+
+    {{ end }}
+    {{ template "_internal/pagination.html" . }}
+</div>
+{{ end }}

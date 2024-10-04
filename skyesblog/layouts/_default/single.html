@@ -1,0 +1,34 @@
+{{ define "main" }}
+<div class="single">
+
+    {{/*  Post Image   */}}
+    <img src={{ .Params.image }} alt="image">
+
+    {{/*  Post Title  */}}
+    <a>{{ .Params.title }}</a>
+
+    {{/*  Date & Description  */}}
+    <time>{{ dateFormat .Site.Params.dateFormat .Date }}</time>
+    {{ .Params.description }}
+
+    {{/*  User avatar  */}}
+    <img src={{ .Params.avatar }} alt="avatar">
+
+    {{/*  Authors  */}}
+    {{ range (.GetTerms "authors") }}
+    <a href={{ .Permalink }}>{{ .Name }}</a>
+    {{ end }}
+
+    {{/*  Categories  */}}
+    {{ range (.GetTerms "categories") }}
+    <a href={{ .Permalink }}>{{ .Name }}</a>
+    {{ end }}
+
+    {{/*  Markdown Content  */}}
+    {{ .Content }}
+
+    {{/*  Sidebar  */}}
+    {{ partial "sidebar" }}
+
+</div>
+{{ end }}

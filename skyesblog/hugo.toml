@@ -1,0 +1,12 @@
+baseURL = 'https://skyelynwaddell.github.io/'
+languageCode = 'en-us'
+title = 'Skyesblog'
+
+paginate = 10
+
+[params]
+    dateFormat = "Jan 2, 2006"
+
+[taxonomies]
+    category = "categories"
+    author = "authors"

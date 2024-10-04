@@ -1,0 +1,16 @@
+{{ define "main" }}
+
+{{ if eq .RelPermalink "/authors/" }}
+{{ range $.Site.Taxonomies.authors.ByCount }}
+<a href="/authors/{{ .Name | urlize }}">
+    # {{ .Name }} {{ .Count }} <br>
+</a>
+{{ end }}
+{{ else }}
+    {{ $home := site.GetPage "home" }}
+    {{ with $home }}
+        {{ .Content }}
+    {{ end }}
+{{ end }}
+
+{{ end }}

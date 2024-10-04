@@ -1,0 +1,16 @@
+{{ define "main" }}
+
+{{ if eq .RelPermalink "/categories/" }}
+{{ range $.Site.Taxonomies.categories.ByCount }}
+<a href="/categories/{{ .Name | urlize }}">
+    # {{ .Name }} {{ .Count }} <br>
+</a>
+{{ end }}
+{{ else }}
+    {{ $home := site.GetPage "home" }}
+    {{ with $home }}
+        {{ .Content }}
+    {{ end }}
+{{ end }}
+
+{{ end }}
