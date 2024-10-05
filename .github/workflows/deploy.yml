@@ -1,4 +1,4 @@
-name: Publish to GH Pages
+name: Publish to GitHub Pages
 on:
   push:
     branches:
@@ -11,15 +11,6 @@ jobs:
     steps:
       - name: Checkout source
         uses: actions/checkout@v3
-        with:
-          submodules: true
-
-      - name: Checkout destination
-        uses: actions/checkout@v3
-        if: github.ref == 'refs/heads/main'
-        with:
-          ref: gh-pages
-          path: built-site
 
       - name: Setup Hugo
         run: |
@@ -29,15 +20,18 @@ jobs:
       - name: Build
         run: |
           cd ${GITHUB_WORKSPACE}/skyesblog  # Change to the skyesblog directory
-          ${RUNNER_TEMP}/hugo  # Run Hugo from within that directory
+          ${RUNNER_TEMP}/hugo  # Run Hugo to build the site
 
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main'
         run: |
-          cp -R ${GITHUB_WORKSPACE}/skyesblog/public/* ${GITHUB_WORKSPACE}/built-site/
-          cd ${GITHUB_WORKSPACE}/built-site
+          # Remove existing content in the GitHub Pages repo
+          git clone --depth 1 --branch main https://github.com/skyelynwaddell/skyelynwaddell.github.io built-site
+          rm -rf built-site/*
+          cp -R ${GITHUB_WORKSPACE}/skyesblog/public/* built-site/
+          cd built-site
+          git config user.name 'Your GitHub Username'
+          git config user.email 'your-email@example.com'
           git add .
-          git config user.name 'skyelynwaddell'
-          git config user.email 'dillonleewaddell@gmail.com'
-          git commit -m 'Updated site'
+          git commit -m 'Deploy to GitHub Pages'
           git push
