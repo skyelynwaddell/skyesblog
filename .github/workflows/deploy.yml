@@ -25,9 +25,11 @@ jobs:
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main'
         run: |
-          # Remove existing content in the GitHub Pages repo
+          # Clone the GitHub Pages repo
           git clone --depth 1 --branch main https://github.com/skyelynwaddell/skyelynwaddell.github.io built-site
+          # Remove existing content
           rm -rf built-site/*
+          # Copy built files to the root of the GitHub Pages repo
           cp -R ${GITHUB_WORKSPACE}/skyesblog/public/* built-site/
           cd built-site
           git config user.name 'Your GitHub Username'
