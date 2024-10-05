@@ -27,7 +27,9 @@ jobs:
           tar -C ${RUNNER_TEMP} -zxvf /tmp/hugo.tar.gz hugo          
 
       - name: Build
-        run: ${RUNNER_TEMP}/hugo -C ${GITHUB_WORKSPACE}/skyesblog  # Change to the skyesblog directory
+        run: |
+          cd ${GITHUB_WORKSPACE}/skyesblog  # Change to the skyesblog directory
+          ${RUNNER_TEMP}/hugo  # Run Hugo from within that directory
 
       - name: Deploy
         if: github.ref == 'refs/heads/main'
