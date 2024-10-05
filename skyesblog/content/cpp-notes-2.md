@@ -7,6 +7,7 @@ image = "/images/1.webp"
 categories = ["cpp", "basics", "dogs"]
 authors = ["Skye Waddell"]
 avatar = "/images/avatar.webp"
+type = "posts"
 +++
 
 ## CPP Notes

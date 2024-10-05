@@ -1,34 +1,48 @@
 {{ define "main" }}
-<div class="single">
 
+{{ partial "header" (dict "title" (printf "Skyeblog | %s" .Params.title) "context" .) }}
+
+<div class="md">
+
+    <div class="single-header">
     {{/*  Post Image   */}}
-    <img src={{ .Params.image }} alt="image">
+    <img class="single-image" src={{ .Params.image }} alt="image">
 
+    <div class="single-details">
     {{/*  Post Title  */}}
-    <a>{{ .Params.title }}</a>
+    <h1>{{ .Params.title }}</h1>
 
     {{/*  Date & Description  */}}
     <time>{{ dateFormat .Site.Params.dateFormat .Date }}</time>
-    {{ .Params.description }}
+    <h3>{{ .Params.description }}</h3>
+
 
     {{/*  User avatar  */}}
-    <img src={{ .Params.avatar }} alt="avatar">
+    {{/*  <img src={{ .Params.avatar }} alt="avatar">  */}}
 
     {{/*  Authors  */}}
+    <div class="single-stats">
+    <img src="/svg/people-fill.svg" alt=""> 
     {{ range (.GetTerms "authors") }}
     <a href={{ .Permalink }}>{{ .Name }}</a>
     {{ end }}
+    </div>
+
 
     {{/*  Categories  */}}
+    <div class="single-stats">
+    <img src="/svg/tags-fill.svg" alt=""> 
     {{ range (.GetTerms "categories") }}
     <a href={{ .Permalink }}>{{ .Name }}</a>
     {{ end }}
+    </div>
+
+    </div>
+    </div>
+
 
     {{/*  Markdown Content  */}}
     {{ .Content }}
-
-    {{/*  Sidebar  */}}
-    {{ partial "sidebar" }}
 
 </div>
 {{ end }}

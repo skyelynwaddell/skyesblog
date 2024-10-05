@@ -1,0 +1,17 @@
+{{/* Check if this is the homepage or the first page of pagination */}}
+{{ if and (eq .Path "/") (not .Paginator.HasPrev) }}
+    <div class="md" id="github-readme"></div>
+
+    <script>
+        async function loadMarkdown() {
+            const url = "https://raw.githubusercontent.com/skyelynwaddell/skyelynwaddell/main/README.md";
+            const response = await fetch(url);
+            const text = await response.text();
+            
+            const html = marked(text);
+            document.getElementById("github-readme").innerHTML = html;
+        }
+
+        loadMarkdown();
+    </script>
+{{ end }}

@@ -14,9 +14,7 @@ avatar = "/images/avatar.webp"
 ### some test content
 
 ```cpp
-
 //hello world
-
 int main(){
 
     return 0;

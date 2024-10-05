@@ -1,20 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <link rel="stylesheet" href="/css/styles.css">
-    <script src="/js/script.js"></script>
-
-</head>
 <body>
-    <div class="container">
         {{ partial "navbar" . }}
-        {{ block "main" . }} {{ end }}
+
+        <div class="main-row">
+            {{ partial "sidebar" }}
+            {{ block "main" . }} {{ end }}
+        </div>
+
+        <div class="br"></div>
+
         {{ partial "footer" . }}
-    </div>
-    
 </body>
 </html>

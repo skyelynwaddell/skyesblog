@@ -1,0 +1,54 @@
+<h1 class="title" id="blog">Blog</h1>
+
+<div class="inner-row" id="blog">
+    {{/* Set pagination size: 5 for home page, 10 for others */}}
+    {{ $paginator := .Paginator }}
+    {{ if .IsHome }}
+        {{ $paginator = .Paginate (where .Data.Pages "Type" "post") 5 }}
+    {{ else }}
+        {{ $paginator = .Paginate (where .Data.Pages "Type" "post") 10 }}
+    {{ end }}
+
+    {{ range $paginator.Pages }}
+    <div class="post">
+        <!-- Post image -->
+        <a href="{{ .Permalink }}">
+            <img class="post-image" src="{{ .Params.image }}" alt="{{ .Params.title }}">
+        </a>
+
+        <div class="post-contents">
+            <!-- Post Title -->
+            <a href="{{ .Permalink }}">
+                <h1>{{ .Params.title }}</h1>
+            </a>
+
+            <!-- Post Date & Description -->
+            <h4>
+                <time>{{ dateFormat .Site.Params.dateFormat .Date }}</time>
+            </h4>
+            <h3>{{ .Params.description }}</h3>
+
+            <!-- Post Authors -->
+            <div class="post-tags">
+                <img src="/svg/people-fill.svg" alt="Authors">
+                {{ range (.GetTerms "authors") }}
+                    <a class="btn btn-primary" href="{{ .Permalink }}">{{ .Name }}</a>
+                {{ end }}
+            </div>
+
+            <!-- Post Categories -->
+            <div class="post-tags">
+                <img src="/svg/tags-fill.svg" alt="Categories">
+                {{ range (.GetTerms "categories") }}
+                    <a class="btn btn-primary" href="{{ .Permalink }}">{{ .Name }}</a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+    {{ end }}
+</div>
+
+<!-- Pagination Links -->
+<div class="pagination">
+    {{ template "_internal/pagination.html" . }}
+</div>
