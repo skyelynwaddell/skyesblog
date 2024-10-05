@@ -2,44 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Skye Waddell on Skyesblog</title>
-    <link>https://skyelynwaddell.github.io/skyesblog/authors/skye-waddell/</link>
+    <link>https://skyelynwaddell.github.io/authors/skye-waddell/</link>
     <description>Recent content in Skye Waddell on Skyesblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Oct 2024 16:44:00 -0600</lastBuildDate><atom:link href="https://skyelynwaddell.github.io/skyesblog/authors/skye-waddell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Oct 2024 16:44:00 -0600</lastBuildDate><atom:link href="https://skyelynwaddell.github.io/authors/skye-waddell/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cpp Notes</title>
-      <link>https://skyelynwaddell.github.io/skyesblog/cpp-notes-2/</link>
+      <link>https://skyelynwaddell.github.io/cpp-notes-2/</link>
       <pubDate>Fri, 04 Oct 2024 16:44:00 -0600</pubDate>
       
-      <guid>https://skyelynwaddell.github.io/skyesblog/cpp-notes-2/</guid>
+      <guid>https://skyelynwaddell.github.io/cpp-notes-2/</guid>
       <description>CPP Notes some test content //hello world int main(){ return 0; } </description>
     </item>
     
     <item>
       <title>Cpp Notes</title>
-      <link>https://skyelynwaddell.github.io/skyesblog/cpp-notes-3/</link>
+      <link>https://skyelynwaddell.github.io/cpp-notes-3/</link>
       <pubDate>Fri, 04 Oct 2024 16:44:00 -0600</pubDate>
       
-      <guid>https://skyelynwaddell.github.io/skyesblog/cpp-notes-3/</guid>
+      <guid>https://skyelynwaddell.github.io/cpp-notes-3/</guid>
       <description>CPP Notes 123 some test content 123 //hello world int main(){ return 0; } </description>
     </item>
     
     <item>
       <title>Cpp Notes</title>
-      <link>https://skyelynwaddell.github.io/skyesblog/cpp-notes-4/</link>
+      <link>https://skyelynwaddell.github.io/cpp-notes-4/</link>
       <pubDate>Fri, 04 Oct 2024 16:44:00 -0600</pubDate>
       
-      <guid>https://skyelynwaddell.github.io/skyesblog/cpp-notes-4/</guid>
+      <guid>https://skyelynwaddell.github.io/cpp-notes-4/</guid>
       <description>CPP Notes some test content //hello world int main(){ return 0; } </description>
     </item>
     
     <item>
       <title>Cpp Notes</title>
-      <link>https://skyelynwaddell.github.io/skyesblog/cpp-notes/</link>
+      <link>https://skyelynwaddell.github.io/cpp-notes/</link>
       <pubDate>Fri, 04 Oct 2024 16:44:00 -0600</pubDate>
       
-      <guid>https://skyelynwaddell.github.io/skyesblog/cpp-notes/</guid>
+      <guid>https://skyelynwaddell.github.io/cpp-notes/</guid>
       <description>CPP Notes some test content //hello world int main(){ return 0; } </description>
     </item>
     
