@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors on Skyesblog</title>
+    <link>https://skyelynwaddell.github.io/skyesblog/authors/</link>
+    <description>Recent content in Authors on Skyesblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 04 Oct 2024 16:44:00 -0600</lastBuildDate><atom:link href="https://skyelynwaddell.github.io/skyesblog/authors/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Skye Waddell</title>
+      <link>https://skyelynwaddell.github.io/skyesblog/authors/skye-waddell/</link>
+      <pubDate>Fri, 04 Oct 2024 16:44:00 -0600</pubDate>
+      
+      <guid>https://skyelynwaddell.github.io/skyesblog/authors/skye-waddell/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
